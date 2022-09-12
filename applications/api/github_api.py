@@ -1,0 +1,2 @@
+class GitHubAPI:
+    pass
