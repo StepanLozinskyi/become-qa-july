@@ -1,2 +1,2 @@
 class Config:
-    pass
+    base_url = 'https://api.github.com'
