@@ -2,7 +2,7 @@ import requests
 import pytest
 from applications.api.github_api import GitHubAPI
 from config.config import Config
-
+from providers.data.users_provider import UsersProvider
 
 # def test_http_status_code200_initial_test():
 #     r = requests.get('https://api.github.com/zen')
@@ -37,3 +37,14 @@ from config.config import Config
 # def test_user_non_exists(github_api_client):
 #     with pytest.raises(requests.exceptions.HTTPError):
 #         user = github_api_client.get_user('wqeqweqwrtq2313etwe')
+
+# def test_user_exists_with_user_provider(github_api_client):
+#     existing_user = UsersProvider.existing_user()
+#     github_user = github_api_client.get_user(existing_user['login'])
+#     assert github_user['login'] == existing_user['login']
+#     assert github_user['id'] == existing_user['id']
+
+# def test_user_non_exists_with_user_provider(github_api_client):
+#     fake_user = UsersProvider.fake_user()
+#     with pytest.raises(requests.exceptions.HTTPError):
+#         github_user = github_api_client.get_user(fake_user['login'])
